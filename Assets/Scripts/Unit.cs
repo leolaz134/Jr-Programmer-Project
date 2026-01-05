@@ -26,7 +26,12 @@ public abstract class Unit : MonoBehaviour,
 
     private void Start()
     {
-
+        //This check is here just in case we start the game directly into a scene with units,
+        //rather than starting from the menu
+        if(MainManager.Instance != null)
+        {
+            SetColor(MainManager.Instance.TeamColor);
+        }
     }
 
     void SetColor(Color c)
